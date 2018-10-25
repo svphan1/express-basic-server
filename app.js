@@ -1,33 +1,36 @@
 const express = require('express');
 const app = express();
-let port = 3600
-const characters = require('./data.json')
+const bodyParser = require('body-parser');
+let port = 3600;
+
+//Route imports
+const characterRoutes = require('./routes/characters');
+
+//general middleware
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-  res.send('🐔')
+  res.send('🐔🐩🐔')
 })
 
-app.get('/characters', (req, res) => {
-  res.json({characters: characters});
-})
+//Any requests that START with /characters, send to this router file
+app.use('/characters', characterRoutes)
 
-// app.get('/characters/:id', (req, res) => {
-//   res.json(characters[req.params.id-1])
-// })
 
-// for (i = 0; i < characters.length; i++) {
-//   if (characters[i].id == id) {
-//     res.json(characters[i])
-//   }
-// })
+//Get the data into the 'database'
+app.use(notFound)
+//General purpose 'catch' all errors
+app.use(errorHandler)
 
-app.get('/characters/:id', (req, res) => {
-  const id = req.params.id
-  const character = characters.filter(character => {
-    return character.id == id
-  })
-  res.json({ character})  
-})
+function notFound(err, req, res, next) {
+  res.status(404).send({error: 'Not found!', status: 404, url: req.originalUrl})
+}
 
+function errorHandler(err, req, res, next) {
+  console.error('NOPE, LOL', err)
+  const stack =  process.env.NODE_ENV !== 'production' ? err.stack : undefined
+  res.status(500).send({error: err.message, stack, url: req.originalUrl})
+}
 
 app.listen(port, () => console.log('Server running on port 3000'))

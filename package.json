@@ -4,7 +4,8 @@
   "description": "## Objectives",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/svphan1/express-basic-server#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4"
   }
 }
