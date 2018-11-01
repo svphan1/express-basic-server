@@ -42,7 +42,7 @@
 
 * [Express Docs - req.params](https://expressjs.com/en/4x/api.html#req.params)
 * [Express Docs - req.body](https://expressjs.com/en/4x/api.html#req.body) -->
-
+<!-- 
 # Basic Express Server: Express Router & Modularization
 
 ## Objectives
@@ -65,4 +65,16 @@
 
 -Routers ust be app.use() at the correct place in the app's pipeline
   *After middleware
-  *Before error handlers
+  *Before error handlers -->
+
+  ## Objectives
+
+* Add knex to a project
+* Setup connection to a local database
+* Create and run migration files
+* Create and run seed files
+
+## Resources
+
+* [Knex.js Docs](https://knexjs.org/)
+* [Knex.js Docs - Schema Builder](https://knexjs.org/#Schema)
