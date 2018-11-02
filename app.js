@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 4000;
 
 //Route imports
 const characterRoutes = require('./routes/characters');

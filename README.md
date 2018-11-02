@@ -67,7 +67,7 @@
   *After middleware
   *Before error handlers -->
 
-  ## Objectives
+  <!-- ## Objectives
 
 * Add knex to a project
 * Setup connection to a local database
@@ -77,4 +77,14 @@
 ## Resources
 
 * [Knex.js Docs](https://knexjs.org/)
-* [Knex.js Docs - Schema Builder](https://knexjs.org/#Schema)
+* [Knex.js Docs - Schema Builder](https://knexjs.org/#Schema) -->
+
+# Objectives
+
+*Implement CRUD functionality using Knex!
+ - Create (POST)
+ - Read (GET all, Get one)
+ - Update (PUT)
+ - Delete (DELETE)
+
+ *[Knex Cheat Sheet] (https://devhints.io/knex)

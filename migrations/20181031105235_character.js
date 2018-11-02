@@ -3,11 +3,11 @@ exports.up = function(knex, Promise) {
   // Code to run to set up our tables
   //create schema
   return knex.schema.createTable('character', function (table) {
-    table.increments();
-    table.string('name');
-    table.integer('height');
-    table.integer('mass');
-  });
+    table.increments()
+    table.string('name')
+    table.integer('height')
+    table.integer('mass')
+  })
 };
 
 exports.down = function(knex, Promise) {
